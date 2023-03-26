@@ -2,67 +2,70 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public sealed class PoolMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
+namespace Pools
 {
-    private readonly List<T> _pool;
-    private readonly T _prefab;
-    private readonly Vector2 _spawnPoint;
-
-    private bool _isAutoExpand;
-    private const int DEFAULT_OBJECTS_AMOUNT = 5; 
-
-    public PoolMonoBehaviour(T prefab, Vector2 spawnPoint, bool isAutoExpand = false)
+    public sealed class PoolMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {
-        _pool = new List<T>();
+        private readonly List<T> _pool;
+        private readonly T _prefab;
+        private readonly Vector2 _spawnPoint;
 
-        _prefab = prefab;
-        _spawnPoint = spawnPoint;
-        _isAutoExpand = isAutoExpand;
+        private bool _isAutoExpand;
+        private const int DEFAULT_OBJECTS_AMOUNT = 5;
 
-        FillPool();
-    }
-
-    public bool TryGetObject(out T obj)
-    {
-        obj = null;
-
-        if (_pool.Any(x => !x.gameObject.activeInHierarchy))
+        public PoolMonoBehaviour(T prefab, Vector2 spawnPoint, bool isAutoExpand = false)
         {
-            obj = _pool.First(x => !x.gameObject.activeInHierarchy);
+            _pool = new List<T>();
 
-            return true;
+            _prefab = prefab;
+            _spawnPoint = spawnPoint;
+            _isAutoExpand = isAutoExpand;
+
+            FillPool();
         }
-        else
+
+        public bool TryGetObject(out T obj)
         {
-            if (_isAutoExpand)
+            obj = null;
+
+            if (_pool.Any(x => !x.gameObject.activeInHierarchy))
             {
-                obj = CreateObject();
-                AddToPool(obj);
+                obj = _pool.First(x => !x.gameObject.activeInHierarchy);
 
                 return true;
             }
+            else
+            {
+                if (_isAutoExpand)
+                {
+                    obj = CreateObject();
+                    AddToPool(obj);
+
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    private void FillPool()
-    {
-        for (var i = 0; i < DEFAULT_OBJECTS_AMOUNT; ++i)
+        private void FillPool()
         {
-            var obj = CreateObject();
-            AddToPool(obj);
+            for (var i = 0; i < DEFAULT_OBJECTS_AMOUNT; ++i)
+            {
+                var obj = CreateObject();
+                AddToPool(obj);
+            }
         }
-    }
 
-    private void AddToPool(T obj)
-    {
-        obj.gameObject.SetActive(false);
-        _pool.Add(obj);
-    }
+        private void AddToPool(T obj)
+        {
+            obj.gameObject.SetActive(false);
+            _pool.Add(obj);
+        }
 
-    private T CreateObject()
-    {
-        return Instantiate(_prefab, _spawnPoint, Quaternion.identity);
+        private T CreateObject()
+        {
+            return Instantiate(_prefab, _spawnPoint, Quaternion.identity);
+        }
     }
 }
