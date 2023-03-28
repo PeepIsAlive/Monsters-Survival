@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+using Components;
 using UnityEngine;
+using Leopotam.Ecs;
 
-public class CharacterInputSystem : MonoBehaviour
+namespace Systems
 {
-    // Start is called before the first frame update
-    void Start()
+    public sealed class CharacterInputSystem : IEcsInitSystem, IEcsRunSystem
     {
-        
-    }
+        private EcsWorld _world;
+        private EcsFilter<CharacterComponent, DirectionComponent> _directionFilter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private CharacterInput _characterInput;
+
+        private Vector2 _direction => _characterInput.Character.Move.ReadValue<Vector2>();
+
+        public void Init()
+        {
+            InitializeInput();
+        }
+
+        public void Run()
+        {
+            if (_characterInput == null)
+                return;
+
+            foreach (var i in _directionFilter)
+            {
+                _directionFilter.Get2(i).Direction = _direction;
+            }
+        }
+
+        private void InitializeInput()
+        {
+            _characterInput = new CharacterInput();
+            _characterInput.Enable();
+        }
     }
 }

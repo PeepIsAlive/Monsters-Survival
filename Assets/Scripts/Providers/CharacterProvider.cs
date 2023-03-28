@@ -1,5 +1,7 @@
 using Voody.UniLeo;
 using Components;
 
-
-public sealed class CharacterProvider : MonoProvider<CharacterComponent> { }
+namespace Providers
+{
+    public sealed class CharacterProvider : MonoProvider<CharacterComponent> { }
+}
