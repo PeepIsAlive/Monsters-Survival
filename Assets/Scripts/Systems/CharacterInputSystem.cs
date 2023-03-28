@@ -1,13 +1,13 @@
-using Components;
-using UnityEngine;
 using Leopotam.Ecs;
+using UnityEngine;
+using Components;
 
 namespace Systems
 {
     public sealed class CharacterInputSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private EcsWorld _world;
-        private EcsFilter<CharacterComponent, DirectionComponent> _directionFilter;
+        private readonly EcsWorld _world;
+        private readonly EcsFilter<CharacterComponent, DirectionComponent> _directionFilter;
 
         private CharacterInput _characterInput;
 

@@ -1,7 +1,7 @@
 using Leopotam.Ecs;
+using Voody.UniLeo;
 using UnityEngine;
 using Systems;
-using Voody.UniLeo;
 
 namespace MonstersSurvival
 {
