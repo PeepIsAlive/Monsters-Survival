@@ -1,17 +1,14 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Settings
 {
-    [CreateAssetMenu(menuName = "Settings/SettingsProvider", fileName = "SettingsProvider", order = 51)]
-    public sealed class SettingsProvider : ScriptableObject
+    public static class SettingsProvider
     {
-        [SerializeField] private List<ScriptableObject> _settings;
+        private const string SETTINGS_PATH = "Settings/{0}";
 
-        public T Get<T>() where T : ScriptableObject
+        public static T Load<T>() where T : ScriptableObject
         {
-            return (T) _settings.First(x => x is T);
+            return Resources.Load<T>(string.Format(SETTINGS_PATH, nameof(T)));
         }
     }
 }
