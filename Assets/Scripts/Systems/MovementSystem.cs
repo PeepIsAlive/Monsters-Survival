@@ -12,7 +12,10 @@ namespace Systems
         {
             foreach (var i in _movementFilter)
             {
+                var direction = _movementFilter.Get2(i);
+                var movement = _movementFilter.Get1(i);
 
+                movement.Rigidbody.velocity = direction.Direction;
             }
         }
     }

@@ -21,6 +21,7 @@ namespace MonstersSurvival
         private void Start()
         {
             AddSystems();
+            AddFixedSystems();
 
             _systems.ConvertScene();
             _fixedSystems.ConvertScene();
@@ -55,6 +56,12 @@ namespace MonstersSurvival
         {
             _systems
                 .Add(new CharacterInputSystem());
+        }
+
+        private void AddFixedSystems()
+        {
+            _fixedSystems
+                .Add(new MovementSystem());
         }
     }
 }
