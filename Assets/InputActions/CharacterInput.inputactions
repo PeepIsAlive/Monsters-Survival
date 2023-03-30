@@ -13,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "df51c1af-7202-4cd5-ab38-9cbc75224c28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "d8cd64b3-f075-469a-afd5-4eaaf18fab10",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -33,7 +51,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -44,7 +62,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -55,7 +73,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -66,7 +84,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -125,17 +143,66 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5e982ff7-27a5-4937-a441-05bb8facf360",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53456c8e-f6f8-47cb-b7a1-e47c0db774b6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a4986e2-57a7-4ffb-a36c-b5668b43f17e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f18d852e-c824-4822-85bb-3328ddb24402",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "Keyboard & Mouse",
+            "bindingGroup": "Keyboard & Mouse",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

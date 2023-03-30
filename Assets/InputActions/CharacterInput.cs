@@ -35,6 +35,24 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""df51c1af-7202-4cd5-ab38-9cbc75224c28"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8cd64b3-f075-469a-afd5-4eaaf18fab10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -55,7 +73,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -66,7 +84,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -77,7 +95,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -88,7 +106,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -147,17 +165,66 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e982ff7-27a5-4937-a441-05bb8facf360"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53456c8e-f6f8-47cb-b7a1-e47c0db774b6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a4986e2-57a7-4ffb-a36c-b5668b43f17e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f18d852e-c824-4822-85bb-3328ddb24402"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
+            ""name"": ""Keyboard & Mouse"",
+            ""bindingGroup"": ""Keyboard & Mouse"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -179,6 +246,8 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
         m_Character_Move = m_Character.FindAction("Move", throwIfNotFound: true);
+        m_Character_Shoot = m_Character.FindAction("Shoot", throwIfNotFound: true);
+        m_Character_Interaction = m_Character.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,11 +308,15 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Character;
     private ICharacterActions m_CharacterActionsCallbackInterface;
     private readonly InputAction m_Character_Move;
+    private readonly InputAction m_Character_Shoot;
+    private readonly InputAction m_Character_Interaction;
     public struct CharacterActions
     {
         private @CharacterInput m_Wrapper;
         public CharacterActions(@CharacterInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Character_Move;
+        public InputAction @Shoot => m_Wrapper.m_Character_Shoot;
+        public InputAction @Interaction => m_Wrapper.m_Character_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +329,12 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMove;
+                @Shoot.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnShoot;
+                @Interaction.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteraction;
+                @Interaction.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteraction;
+                @Interaction.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteraction;
             }
             m_Wrapper.m_CharacterActionsCallbackInterface = instance;
             if (instance != null)
@@ -263,17 +342,23 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+                @Interaction.started += instance.OnInteraction;
+                @Interaction.performed += instance.OnInteraction;
+                @Interaction.canceled += instance.OnInteraction;
             }
         }
     }
     public CharacterActions @Character => new CharacterActions(this);
-    private int m_KeyboardSchemeIndex = -1;
-    public InputControlScheme KeyboardScheme
+    private int m_KeyboardMouseSchemeIndex = -1;
+    public InputControlScheme KeyboardMouseScheme
     {
         get
         {
-            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-            return asset.controlSchemes[m_KeyboardSchemeIndex];
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard & Mouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
         }
     }
     private int m_GamepadSchemeIndex = -1;
@@ -288,5 +373,7 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
     public interface ICharacterActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }
