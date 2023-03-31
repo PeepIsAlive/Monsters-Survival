@@ -1,19 +1,7 @@
-using Core.Interfaces;
-
 namespace Core
 {
-    public sealed class Character : Person, IMovable, IRotable
+    public sealed class Character : Person
     {
         public Character(string id) : base(id) { }
-
-        public void Move()
-        {
-            
-        }
-
-        public void Rotate()
-        {
-            
-        }
     }
 }
