@@ -17,7 +17,7 @@ namespace Systems
             var eventType = typeof(T);
 
             if (!_events.ContainsKey(eventType))
-                return;
+                _events.Add(eventType, new ActionWrapper<T>());
 
             ((ActionWrapper<T>)_events[eventType]).Action += handler;
         }
@@ -49,7 +49,7 @@ namespace Systems
             if (!_events.ContainsKey(eventType))
                 return;
 
-            ((ActionWrapper<T>)_events[eventType])?.Invoke(new T());
+            ((ActionWrapper<T>)_events[eventType]).Invoke(new T());
         }
     }
 
