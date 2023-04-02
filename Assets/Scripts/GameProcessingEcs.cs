@@ -55,7 +55,8 @@ namespace MonstersSurvival
         private void AddSystems()
         {
             _systems
-                .Add(new CharacterInputSystem());
+                .Add(new CharacterInputSystem())
+                .Add(new CharacterCreationSystem());
         }
 
         private void AddFixedSystems()
