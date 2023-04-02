@@ -23,7 +23,7 @@ namespace Systems
         {
             foreach (var i in _characterFilter)
             {
-                UnityEngine.Debug.Log("create character");
+                
             }
         }
     }
