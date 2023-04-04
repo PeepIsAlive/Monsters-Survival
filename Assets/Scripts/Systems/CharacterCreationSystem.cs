@@ -11,7 +11,7 @@ namespace Systems
         private readonly EcsWorld _world;
         private readonly EcsFilter<CharacterComponent> _characterFilter;
 
-        private readonly string _id = Guid.NewGuid().ToString();
+        private string _id => Guid.NewGuid().ToString();
 
         public void Init()
         {
