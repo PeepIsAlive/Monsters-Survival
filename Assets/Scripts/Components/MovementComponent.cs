@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
+using System;
 
 namespace Components
 {
     [Serializable]
     public struct MovementComponent
     {
-        public Rigidbody2D Rigidbody;
+        public CharacterController Controller;
     }
 }
