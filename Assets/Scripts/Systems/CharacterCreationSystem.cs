@@ -1,6 +1,8 @@
 using Leopotam.Ecs;
 using Components;
+using System;
 using Events;
+using Core;
 
 namespace Systems
 {
@@ -8,6 +10,8 @@ namespace Systems
     {
         private readonly EcsWorld _world;
         private readonly EcsFilter<CharacterComponent> _characterFilter;
+
+        private readonly string _id = Guid.NewGuid().ToString();
 
         public void Init()
         {
@@ -23,7 +27,9 @@ namespace Systems
         {
             foreach (var i in _characterFilter)
             {
-                
+                ref var component = ref _characterFilter.Get1(i);
+
+                component.Character = new Character(_id);
             }
         }
     }
