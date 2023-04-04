@@ -6,7 +6,6 @@ namespace Systems
 {
     public sealed class MovementSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world;
         private readonly EcsFilter<PersonComponent, MovementComponent, DirectionComponent> _movementFilter;
 
         public void Run()

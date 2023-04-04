@@ -8,7 +8,6 @@ namespace Systems
 {
     public sealed class CharacterCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
-        private readonly EcsWorld _world;
         private readonly EcsFilter<CharacterComponent> _characterFilter;
 
         private readonly string _id = Guid.NewGuid().ToString();
