@@ -1,6 +1,5 @@
 using Leopotam.Ecs;
 using Components;
-using System;
 using Events;
 using Core;
 
@@ -9,8 +8,7 @@ namespace Systems
     public sealed class EnemyCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
         private readonly EcsFilter<EnemyComponent> _enemyFilter;
-
-        private string _id => Guid.NewGuid().ToString();
+        private readonly WorldGenerator _worldGenerator;
 
         public void Init()
         {
@@ -28,7 +26,7 @@ namespace Systems
             {
                 ref var component = ref _enemyFilter.Get1(i);
 
-                component.Enemy = new Enemy(_id);
+                component.Enemy = _worldGenerator.CreateEnemy();
             }
         }
     }

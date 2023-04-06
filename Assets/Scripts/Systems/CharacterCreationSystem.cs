@@ -1,6 +1,5 @@
 using Leopotam.Ecs;
 using Components;
-using System;
 using Events;
 using Core;
 
@@ -9,8 +8,7 @@ namespace Systems
     public sealed class CharacterCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
         private readonly EcsFilter<CharacterComponent> _characterFilter;
-
-        private string _id => Guid.NewGuid().ToString();
+        private readonly WorldGenerator _worldGenerator;
 
         public void Init()
         {
@@ -28,7 +26,7 @@ namespace Systems
             {
                 ref var component = ref _characterFilter.Get1(i);
 
-                component.Character = new Character(_id);
+                component.Character = _worldGenerator.CreateCharacter();
             }
         }
     }
