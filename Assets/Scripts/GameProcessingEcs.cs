@@ -57,6 +57,7 @@ namespace MonstersSurvival
         {
             _systems
                 .Add(new CharacterInputSystem())
+                .Add(new RotateSystem())
                 .Add(new CharacterCreationSystem())
                 .Inject(new WorldGenerator());
         }

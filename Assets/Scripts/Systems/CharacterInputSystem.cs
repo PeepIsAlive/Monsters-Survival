@@ -6,9 +6,7 @@ namespace Systems
 {
     public sealed class CharacterInputSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly EcsWorld _world;
         private readonly EcsFilter<CharacterComponent, DirectionComponent> _directionFilter;
-
         private CharacterInput _characterInput;
 
         private Vector2 _direction => _characterInput.Character.Move.ReadValue<Vector2>();

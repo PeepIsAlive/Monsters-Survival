@@ -1,3 +1,4 @@
+using UnityEngine;
 using System;
 
 namespace Components
@@ -5,6 +6,6 @@ namespace Components
     [Serializable]
     public struct RotateComponent
     {
-
+        public SpriteRenderer Renderer;
     }
 }
