@@ -1,4 +1,4 @@
 namespace Events
 {
-    internal struct CharacterCreationEvent { }
+    public struct CharacterCreationEvent { }
 }

@@ -1,6 +1,6 @@
 namespace Events
 {
-    internal struct EnemyCreationEvent
+    public struct EnemyCreationEvent
     {
         public string Id;
     }
