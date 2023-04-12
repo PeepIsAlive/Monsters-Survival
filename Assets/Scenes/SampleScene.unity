@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameProcessingEcs: {fileID: 8840473207440705767, guid: 39391d385cea5df40aa919ac0bcfd5ae, type: 3}
   _ground: {fileID: 3916617272171320546, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+  _character: {fileID: 2392433016433400278, guid: 279d5a65492ab5a4eb6280861c8f2a61, type: 3}
 --- !u!1 &1841450107
 GameObject:
   m_ObjectHideFlags: 0

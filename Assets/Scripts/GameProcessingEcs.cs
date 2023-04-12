@@ -2,12 +2,15 @@ using Leopotam.Ecs;
 using Voody.UniLeo;
 using UnityEngine;
 using Systems;
+using System;
 using Core;
 
 namespace MonstersSurvival
 {
     public sealed class GameProcessingEcs : MonoBehaviour
     {
+        public event Action OnSystemsInit;
+
         private EcsWorld _world;
         private EcsSystems _systems;
         private EcsSystems _fixedSystems;
@@ -25,10 +28,11 @@ namespace MonstersSurvival
             AddFixedSystems();
 
             _systems.ConvertScene();
-            _fixedSystems.ConvertScene();
 
             _systems.Init();
             _fixedSystems.Init();
+
+            OnSystemsInit?.Invoke();
         }
 
         private void Update()
@@ -43,6 +47,8 @@ namespace MonstersSurvival
 
         private void OnDestroy()
         {
+            OnSystemsInit = null;
+
             _world?.Destroy();
             _world = null;
 
