@@ -1,11 +1,13 @@
 using UnityEngine;
+using System;
 
 namespace Core
 {
+    [Serializable]
     public sealed class Range
     {
-        public int Min { get; private set; }
-        public int Max { get; private set; }
+        [field: SerializeField] public int Min { get; private set; }
+        [field: SerializeField] public int Max { get; private set; }
 
         public Range(int min, int max)
         {
@@ -13,6 +15,6 @@ namespace Core
             Max = max;
         }
 
-        public int GetRandom() => Random.Range(Min, Max);
+        public int GetRandom() => UnityEngine.Random.Range(Min, Max);
     }
 }
