@@ -1,6 +1,6 @@
+using UnityEngine;
 using Extensions;
 using System;
-using UnityEngine;
 
 namespace Settings
 {

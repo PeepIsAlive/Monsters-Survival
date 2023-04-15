@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Settings
 {
-    public sealed class EnemySettings : ScriptableObject
+    public sealed class EnemyCreationSettings : ScriptableObject
     {
         [Header("Creation presets")]
         [field: SerializeField] public List<EnemyPreset> Presets;
