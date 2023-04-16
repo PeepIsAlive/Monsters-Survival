@@ -6,7 +6,7 @@ namespace Core
 
         public Person(string id) : base(id) { }
 
-        public Person(string id, float speed) : base(id)
+        public Person (string id, float speed) : base(id)
         {
             Speed = speed;
         }

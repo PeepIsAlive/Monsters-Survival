@@ -17,6 +17,14 @@ namespace Settings
                 SetNewId();
         }
 
+        protected virtual void RegenerateParameters() { }
+
+        [ContextMenu("Regenerate parameters")]
+        private void SetNewParameters()
+        {
+            RegenerateParameters();
+        }
+
         [ContextMenu("Reset id")]
         private void SetNewId()
         {
