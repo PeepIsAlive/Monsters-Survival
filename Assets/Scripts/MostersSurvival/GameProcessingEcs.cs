@@ -3,7 +3,6 @@ using Voody.UniLeo;
 using UnityEngine;
 using Systems;
 using System;
-using Core;
 
 namespace MonstersSurvival
 {

@@ -8,7 +8,7 @@ namespace Settings
 
         public static T Load<T>() where T : ScriptableObject
         {
-            return Resources.Load<T>(string.Format(SETTINGS_PATH, nameof(T)));
+            return Resources.Load<T>(string.Format(SETTINGS_PATH, typeof(T).Name));
         }
     }
 }

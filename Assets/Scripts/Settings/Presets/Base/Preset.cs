@@ -14,7 +14,10 @@ namespace Settings
         private void OnEnable()
         {
             if (string.IsNullOrEmpty(_id))
+            {
                 SetNewId();
+                SetNewParameters();
+            }
         }
 
         protected virtual void RegenerateParameters() { }

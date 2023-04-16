@@ -11,7 +11,7 @@ namespace Settings
 
         public void GenerateParameters()
         {
-            _speed = UnityEngine.Random.Range(0f, 10f);
+            _speed = UnityEngine.Random.Range(2f, 10f);
         }
 
         public Person GetPerson()

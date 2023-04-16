@@ -1,13 +1,12 @@
 using Leopotam.Ecs;
 using Components;
 using Events;
-using Core;
 
 namespace Systems
 {
     public sealed class CharacterCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
-        private readonly EcsFilter<CharacterComponent> _characterFilter;
+        private readonly EcsFilter<CharacterComponent, PersonComponent> _characterFilter;
         private readonly WorldGenerator _worldGenerator;
 
         public void Init()
@@ -24,9 +23,10 @@ namespace Systems
         {
             foreach (var i in _characterFilter)
             {
-                ref var component = ref _characterFilter.Get1(i);
+                ref var character = ref _characterFilter.Get1(i).Character;
+                ref var person = ref _characterFilter.Get2(i).Person;
 
-                component.Character = _worldGenerator.CreateCharacter();
+                character = _worldGenerator.CreateCharacter(out person);
             }
         }
     }
