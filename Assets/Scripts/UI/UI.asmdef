@@ -1,10 +1,7 @@
 {
-    "name": "Components",
+    "name": "UI",
     "rootNamespace": "",
-    "references": [
-        "GUID:f28c92e18553e7f4f9ff0df268ceb1dc",
-        "GUID:04ac870ecf74c3747b275b3fa808ca34"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

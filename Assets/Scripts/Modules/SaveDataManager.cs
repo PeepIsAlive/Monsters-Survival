@@ -1,7 +1,7 @@
 using Services.Saves;
 using UnityEditor;
 
-namespace Managers
+namespace Modules
 {
     public sealed class SaveDataManager
     {

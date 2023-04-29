@@ -2,7 +2,7 @@ using Settings;
 using System;
 using Core;
 
-namespace Systems
+namespace Modules
 {
     public sealed class WorldGenerator
     {

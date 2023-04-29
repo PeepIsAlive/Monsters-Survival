@@ -1,8 +1,10 @@
 using Leopotam.Ecs;
 using Voody.UniLeo;
 using UnityEngine;
+using Modules;
 using Systems;
 using System;
+using UI;
 
 namespace MonstersSurvival
 {
@@ -64,7 +66,8 @@ namespace MonstersSurvival
                 .Add(new CharacterInputSystem())
                 .Add(new RotateSystem())
                 .Add(new CharacterCreationSystem())
-                .Inject(new WorldGenerator());
+                .Inject(new WorldGenerator())
+                .Inject(new PopupViewManager());
         }
 
         private void AddFixedSystems()

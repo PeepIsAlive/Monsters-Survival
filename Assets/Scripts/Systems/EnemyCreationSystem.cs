@@ -1,7 +1,7 @@
 using Leopotam.Ecs;
 using Components;
+using Modules;
 using Events;
-using Core;
 
 namespace Systems
 {
