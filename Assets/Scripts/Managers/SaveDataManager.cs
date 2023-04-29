@@ -15,7 +15,7 @@ namespace Managers
         }
 
 #if UNITY_EDITOR
-        [MenuItem("Saves/Clear saves & prefs")]
+        [MenuItem("Saves/Clear saves and prefs")]
         public static void ClearSaves()
         {
 
