@@ -8,5 +8,10 @@ namespace UI
         {
 
         }
+
+        public void HideCurrentPopup()
+        {
+
+        }
     }
 }
