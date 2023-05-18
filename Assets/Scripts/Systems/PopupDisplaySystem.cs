@@ -15,7 +15,11 @@ namespace Systems
         {
             foreach (var i in _showPopupFilter)
             {
+                var entity = _showPopupFilter.GetEntity(i);
+                var component = _showPopupFilter.Get1(i);
 
+                component.PopupToShow.Show(_popupViewManager);
+                entity.Destroy();
             }
 
             foreach (var i in _hidePopupFilter)
