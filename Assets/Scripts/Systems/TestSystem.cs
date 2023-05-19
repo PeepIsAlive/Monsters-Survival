@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using Leopotam.Ecs;
+using UI.Settings;
 using UnityEngine;
 using Components;
 using System;

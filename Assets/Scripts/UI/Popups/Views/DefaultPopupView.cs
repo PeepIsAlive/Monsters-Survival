@@ -1,3 +1,4 @@
+using UI.Settings;
 using UnityEngine;
 using TMPro;
 
@@ -11,6 +12,7 @@ namespace UI.Views
         public override void Setup(DefaultPopup settings)
         {
             base.Setup(settings);
+            InitializeButtons(settings.ButtonSettings);
 
             _headerLabel.text = settings.HeaderText;
         }
