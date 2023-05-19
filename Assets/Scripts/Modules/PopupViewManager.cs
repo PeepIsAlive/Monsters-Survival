@@ -31,7 +31,7 @@ namespace UI
             if (_currentPopup == null)
             {
 #if DEBUG
-                Debug.LogError("Try close current Popup[== null]");
+                Debug.LogError("Try close current Popup[null]");
 #endif
                 return;
             }

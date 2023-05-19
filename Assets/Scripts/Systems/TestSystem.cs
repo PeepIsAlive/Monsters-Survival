@@ -1,7 +1,7 @@
 #if UNITY_EDITOR
 using Leopotam.Ecs;
-using Components;
 using UnityEngine;
+using Components;
 using System;
 using UI;
 
@@ -19,7 +19,7 @@ namespace Systems
                 {
                     PopupToShow = new PopupToShow<DefaultPopup>(new DefaultPopup
                     {
-
+                        HeaderText = "Default popup"
                     })
                 });
             });
