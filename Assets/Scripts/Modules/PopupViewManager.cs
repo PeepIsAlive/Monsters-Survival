@@ -28,7 +28,15 @@ namespace UI
 
         public void HideCurrentPopup()
         {
+            if (_currentPopup == null)
+            {
+#if DEBUG
+                Debug.LogError("Try close current Popup[== null]");
+#endif
+                return;
+            }
 
+            _currentPopup.Hide();
         }
     }
 }

@@ -5,8 +5,6 @@ namespace UI.Views
 {
     public sealed class DefaultPopupView : PopupView<DefaultPopup>
     {
-        [SerializeField] private Button _overlayButton;
-
         public override void Setup(DefaultPopup settings)
         {
             base.Setup(settings);
@@ -21,11 +19,5 @@ namespace UI.Views
         {
             base.Hide();
         }
-
-        private void SetOverlayButtonState(bool state)
-        {
-            _overlayButton?.gameObject.SetActive(state);
-        }
-
     }
 }

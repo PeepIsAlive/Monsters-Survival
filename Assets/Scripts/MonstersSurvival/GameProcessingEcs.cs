@@ -66,6 +66,10 @@ namespace MonstersSurvival
                 .Add(new CharacterInputSystem())
                 .Add(new RotateSystem())
                 .Add(new CharacterCreationSystem())
+                .Add(new PopupDisplaySystem())
+#if UNITY_EDITOR
+            .Add(new TestSystem())
+#endif
                 .Inject(new WorldGenerator())
                 .Inject(new PopupViewManager());
         }
