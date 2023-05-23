@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Popups>k__BackingField:
   - {fileID: 7596037100351249441, guid: 2f4b221a27af8c2458f6080de628b01c, type: 3}
+  <Buttons>k__BackingField:
+  - {fileID: 4615141725489298347, guid: 27e27ea2a4cdc5e44a60f8c73f1f678c, type: 3}

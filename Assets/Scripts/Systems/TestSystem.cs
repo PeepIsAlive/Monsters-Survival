@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Collections.Generic;
 using Leopotam.Ecs;
 using UI.Settings;
 using UnityEngine;
@@ -20,7 +21,26 @@ namespace Systems
                 {
                     PopupToShow = new PopupToShow<DefaultPopup>(new DefaultPopup
                     {
-                        HeaderText = "Default popup"
+                        HeaderText = "Default popup",
+                        ButtonSettings = new List<ButtonSettings>
+                        {
+                            new DefaultButtonSettings
+                            {
+                                Title = "button 1",
+                                Action = () =>
+                                {
+                                    _world.NewEntity().Replace(new HidePopupComponent());
+                                }
+                            },
+                            new DefaultButtonSettings
+                            {
+                                Title = "button 2",
+                                Action = () =>
+                                {
+                                    _world.NewEntity().Replace(new HidePopupComponent());
+                                }
+                            }
+                        }
                     })
                 });
             });

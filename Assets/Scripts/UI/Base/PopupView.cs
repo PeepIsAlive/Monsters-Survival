@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
 using UI.Settings;
+using Settings;
+using System.Linq;
+using UI.Views;
 
 namespace UI
 {
@@ -16,7 +19,7 @@ namespace UI
         [Header("Blocks")]
         [SerializeField] private RectTransform _topParent;
         [SerializeField] private RectTransform _middleParent;
-        [SerializeField] private RectTransform _bottomParent;
+        [SerializeField] private RectTransform _buttonParent;
 
         private readonly float _durationTween = 0.4f;
         private bool _ignoreOverlayButtonAction;
@@ -44,7 +47,18 @@ namespace UI
 
         protected void InitializeButtons(List<ButtonSettings> buttonSettings)
         {
+            var prefabSet = SettingsProvider.Load<PrefabSet>();
 
+            foreach (var setting in buttonSettings)
+            {
+                if (setting is DefaultButtonSettings)
+                {
+                    var prefab = prefabSet.Buttons.First(x => x.GetComponent<DefaultButtonView>() != null)
+                        .GetComponent<DefaultButtonView>();
+                    Instantiate(prefab, _buttonParent, false)
+                        .Setup(setting);
+                }
+            }
         }
 
         private void DoShow()

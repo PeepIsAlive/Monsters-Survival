@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UI.Views;
 using UI;
 
 namespace Settings
@@ -8,5 +9,6 @@ namespace Settings
     public sealed class PrefabSet : ScriptableObject
     {
         [field: SerializeField] public List<PopupViewBase> Popups { get; private set; }
+        [field: SerializeField] public List<ButtonView> Buttons { get; private set; }
     }
 }
