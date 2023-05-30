@@ -13,14 +13,5 @@ namespace Settings
         {
             Speed = UnityEngine.Random.Range(2f, 10f);
         }
-
-        public Person GetPerson()
-        {
-            return new Person
-                (
-                    Guid.NewGuid().ToString(),
-                    Speed
-                );
-        }
     }
 }

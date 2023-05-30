@@ -22,12 +22,15 @@ namespace Systems
 
         private void CreateEnemy(EnemyCreationEvent e)
         {
-            var enemy = _worldGenerator.CreateEnemy();
+            var enemy = _worldGenerator.CreateEnemy(e.EnemyMonobehaviour.Type, out var person);
 
             e.EnemyMonobehaviour.SetEnemy(enemy);
             _world.NewEntity().Replace(new EnemyComponent
             {
                 Enemy = enemy
+            }).Replace(new PersonComponent
+            {
+                Person = person
             });
         }
     }
