@@ -7,11 +7,11 @@ namespace Settings
     [Serializable]
     public sealed class PersonPreset
     {
-        [SerializeField] private float _speed;
+        [field: SerializeField] public float Speed { get; private set; }
 
         public void GenerateParameters()
         {
-            _speed = UnityEngine.Random.Range(2f, 10f);
+            Speed = UnityEngine.Random.Range(2f, 10f);
         }
 
         public Person GetPerson()
@@ -19,7 +19,7 @@ namespace Settings
             return new Person
                 (
                     Guid.NewGuid().ToString(),
-                    _speed
+                    Speed
                 );
         }
     }

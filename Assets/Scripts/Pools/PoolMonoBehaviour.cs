@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pools
 {
-    public sealed class PoolMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
+    public sealed class PoolMonoBehaviour<T> where T : MonoBehaviour
     {
         private readonly List<T> _pool;
         private readonly T _prefab;
@@ -65,7 +65,7 @@ namespace Pools
 
         private T CreateObject()
         {
-            return Instantiate(_prefab, _spawnPoint, Quaternion.identity);
+            return Object.Instantiate(_prefab, _spawnPoint, Quaternion.identity);
         }
     }
 }

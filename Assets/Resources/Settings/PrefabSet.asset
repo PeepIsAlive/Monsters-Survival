@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1759545aa39d1c14ab6beedc3d3cb44f, type: 3}
   m_Name: PrefabSet
   m_EditorClassIdentifier: 
+  <EnemiesPrefabs>k__BackingField:
+  - {fileID: 1532584138, guid: a1c02bdc5b4d6744288b8dea54b1cdbb, type: 3}
   <Popups>k__BackingField:
   - {fileID: 7596037100351249441, guid: 2f4b221a27af8c2458f6080de628b01c, type: 3}
   <Buttons>k__BackingField:

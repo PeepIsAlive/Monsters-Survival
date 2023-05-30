@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PopupParent
   - MainCanvas
+  - EnemiesParent
   layers:
   - Default
   - TransparentFX

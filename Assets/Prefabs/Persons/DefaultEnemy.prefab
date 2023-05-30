@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 3462914290855690126}
   - component: {fileID: 3462914290855690115}
   - component: {fileID: 3462914290855690127}
+  - component: {fileID: 1532584138}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: DefaultEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +124,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     Direction: {x: 0, y: 0}
+--- !u!114 &1532584138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3462914290855690112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f8cdda20352f14fbbbfdb6203d1d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3462914291613090159
 GameObject:
   m_ObjectHideFlags: 0

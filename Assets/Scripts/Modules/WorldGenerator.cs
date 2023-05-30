@@ -13,7 +13,7 @@ namespace Modules
             var creationSettings = SettingsProvider.Load<CharacterCreationSettings>();
             var character = creationSettings.GetCharacter();
 
-            person = creationSettings.GetPerson();
+            person = character;
 
             return character;
         }

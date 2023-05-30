@@ -7,7 +7,7 @@ namespace Systems
 {
     public sealed class EnemyCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
-        private readonly EcsFilter<EnemyComponent> _enemyFilter;
+        private readonly EcsWorld _world;
         private readonly WorldGenerator _worldGenerator;
 
         public void Init()
@@ -22,12 +22,13 @@ namespace Systems
 
         private void CreateEnemy(EnemyCreationEvent e)
         {
-            foreach (var i in _enemyFilter)
-            {
-                ref var component = ref _enemyFilter.Get1(i);
+            var enemy = _worldGenerator.CreateEnemy();
 
-                component.Enemy = _worldGenerator.CreateEnemy();
-            }
+            e.EnemyMonobehaviour.SetEnemy(enemy);
+            _world.NewEntity().Replace(new EnemyComponent
+            {
+                Enemy = enemy
+            });
         }
     }
 }

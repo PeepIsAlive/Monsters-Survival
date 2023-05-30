@@ -1,7 +1,9 @@
+using Core.Monobehaviour;
+
 namespace Events
 {
     public struct EnemyCreationEvent
     {
-        public string Id;
+        public EnemyMonobehaviour EnemyMonobehaviour;
     }
 }
