@@ -63,9 +63,10 @@ namespace MonstersSurvival
         private void AddSystems()
         {
             _systems
+                .Add(new EnemyCreationSystem())
+                .Add(new CharacterCreationSystem())
                 .Add(new CharacterInputSystem())
                 .Add(new RotateSystem())
-                .Add(new CharacterCreationSystem())
                 .Add(new PopupDisplaySystem())
 #if UNITY_EDITOR
             .Add(new TestSystem())
