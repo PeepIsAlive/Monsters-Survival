@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using Core;
 
 namespace Settings
 {
