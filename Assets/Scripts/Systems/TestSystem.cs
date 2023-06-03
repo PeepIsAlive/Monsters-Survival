@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using Application = MonstersSurvival.Application;
 using System.Collections.Generic;
 using Leopotam.Ecs;
 using UI.Settings;
@@ -42,6 +43,22 @@ namespace Systems
                             }
                         }
                     })
+                });
+            });
+
+            PerformAction(KeyCode.H, KeyCode.K, () =>
+            {
+                Application.Model.GetCharacterEntity().Replace(new HealthDecComponent
+                {
+                    Value = 50f
+                });
+            });
+
+            PerformAction(KeyCode.H, KeyCode.L, () =>
+            {
+                Application.Model.GetCharacterEntity().Replace(new HealthIncComponent
+                {
+                    Value = 15f
                 });
             });
         }
