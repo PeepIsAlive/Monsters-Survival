@@ -12,10 +12,5 @@ namespace Settings
         {
             return _preset.GetCharacter();
         }
-
-        public Person GetPerson()
-        {
-            return _preset.GetPerson();
-        }
     }
 }

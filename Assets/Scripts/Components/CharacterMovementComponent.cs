@@ -4,7 +4,7 @@ using System;
 namespace Components
 {
     [Serializable]
-    public struct MovementComponent
+    public struct CharacterMovementComponent
     {
         public CharacterController Controller;
     }

@@ -9,7 +9,6 @@ namespace MonstersSurvival
         [SerializeField] private GameProcessingEcs _gameProcessingEcs;
 
         [Header("Game objects")]
-        [SerializeField] private GameObject _ground;
         [SerializeField] private GameObject _character;
 
         private Transform _parent;
@@ -29,9 +28,7 @@ namespace MonstersSurvival
                 EventSystem.Send<CharacterCreationEvent>();
             };
 
-            Instantiate(_ground, Vector3.zero, Quaternion.identity);
-            Instantiate(_character, Vector3.zero, Quaternion.identity);
-
+            Instantiate(_character, Vector3.up, Quaternion.identity);
             DestroyStarter();
         }
 

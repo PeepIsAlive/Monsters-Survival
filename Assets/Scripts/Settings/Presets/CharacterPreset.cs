@@ -9,14 +9,9 @@ namespace Settings
     {
         [SerializeField] private PersonPreset _personPreset;
 
-        public Person GetPerson()
-        {
-            return _personPreset.GetPerson();
-        }
-
         public Character GetCharacter()
         {
-            return new Character(Guid.NewGuid().ToString());
+            return new Character(Guid.NewGuid().ToString(), _personPreset.Speed);
         }
 
         protected override void RegenerateParameters()

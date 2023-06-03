@@ -1,26 +1,31 @@
 using Settings;
-using System;
 using Core;
 
 namespace Modules
 {
     public sealed class WorldGenerator
     {
-        private string _id => Guid.NewGuid().ToString();
+        private CharacterCreationSettings _characterCreationSettings;
+        private EnemyCreationSettings _enemyCreationSettings;
 
         public Character CreateCharacter(out Person person)
         {
-            var creationSettings = SettingsProvider.Load<CharacterCreationSettings>();
-            var character = creationSettings.GetCharacter();
+            _characterCreationSettings ??= SettingsProvider.Load<CharacterCreationSettings>();
+            var character = _characterCreationSettings.GetCharacter();
 
-            person = creationSettings.GetPerson();
+            person = character;
 
             return character;
         }
 
-        public Enemy CreateEnemy()
+        public Enemy CreateEnemy(EnemyType type, out Person person)
         {
-            return new Enemy(_id);
+            _enemyCreationSettings ??= SettingsProvider.Load<EnemyCreationSettings>();
+            var enemy = _enemyCreationSettings.GetEnemy(type);
+
+            person = enemy;
+
+            return enemy;
         }
     }
 }

@@ -63,9 +63,11 @@ namespace MonstersSurvival
         private void AddSystems()
         {
             _systems
-                .Add(new CharacterInputSystem())
-                .Add(new RotateSystem())
                 .Add(new CharacterCreationSystem())
+                .Add(new CharacterInputSystem())
+                .Add(new EnemyCreationSystem())
+                .Add(new PoolEnemiesSystem())
+                .Add(new RotateSystem())
                 .Add(new PopupDisplaySystem())
 #if UNITY_EDITOR
             .Add(new TestSystem())
@@ -77,7 +79,8 @@ namespace MonstersSurvival
         private void AddFixedSystems()
         {
             _fixedSystems
-                .Add(new MovementSystem());
+                .Add(new MovementSystem())
+                .Add(new EnemyMovementSystem());
         }
     }
 }

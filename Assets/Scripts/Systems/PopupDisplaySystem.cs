@@ -6,10 +6,10 @@ namespace Systems
 {
     public sealed class PopupDisplaySystem : IEcsRunSystem
     {
-        private readonly EcsFilter<ShowPopupComponent> _showPopupFilter;
-        private readonly EcsFilter<HidePopupComponent> _hidePopupFilter;
+        private EcsFilter<ShowPopupComponent> _showPopupFilter;
+        private EcsFilter<HidePopupComponent> _hidePopupFilter;
 
-        private PopupViewManager _popupViewManager;
+        private readonly PopupViewManager _popupViewManager;
 
         public void Run()
         {

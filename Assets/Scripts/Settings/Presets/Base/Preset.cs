@@ -22,6 +22,7 @@ namespace Settings
 
         protected virtual void RegenerateParameters() { }
 
+#if UNITY_EDITOR
         [ContextMenu("Regenerate parameters")]
         private void SetNewParameters()
         {
@@ -33,5 +34,6 @@ namespace Settings
         {
             _id = Guid.NewGuid().ToString();
         }
+#endif
     }
 }
