@@ -11,7 +11,12 @@ namespace Settings
 
         public Character GetCharacter()
         {
-            return new Character(Guid.NewGuid().ToString(), _personPreset.Speed);
+            return new Character
+                (
+                    Guid.NewGuid().ToString(),
+                    _personPreset.Speed,
+                    new Parameters(_personPreset.ParameterSettings)
+                );
         }
 
         protected override void RegenerateParameters()

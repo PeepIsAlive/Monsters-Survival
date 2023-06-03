@@ -1,6 +1,7 @@
 using Leopotam.Ecs;
 using Voody.UniLeo;
 using UnityEngine;
+using Components;
 using Modules;
 using Systems;
 using System;
@@ -63,12 +64,16 @@ namespace MonstersSurvival
         private void AddSystems()
         {
             _systems
+                .Add(Application.Model)
                 .Add(new CharacterCreationSystem())
                 .Add(new CharacterInputSystem())
                 .Add(new EnemyCreationSystem())
                 .Add(new PoolEnemiesSystem())
+                .Add(new HealthSystem())
                 .Add(new RotateSystem())
                 .Add(new PopupDisplaySystem())
+                .OneFrame<HealthIncComponent>()
+                .OneFrame<HealthDecComponent>()
 #if UNITY_EDITOR
             .Add(new TestSystem())
 #endif

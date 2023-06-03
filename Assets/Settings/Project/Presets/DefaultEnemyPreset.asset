@@ -16,3 +16,8 @@ MonoBehaviour:
   <Type>k__BackingField: 0
   _personPreset:
     <Speed>k__BackingField: 5
+    <ParameterSettings>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Range>k__BackingField:
+        <Min>k__BackingField: 0
+        <Max>k__BackingField: 100
