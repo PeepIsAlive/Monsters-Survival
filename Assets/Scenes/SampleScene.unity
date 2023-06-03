@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 472595116}
   - component: {fileID: 472595115}
   m_Layer: 5
-  m_Name: DynamicUI
+  m_Name: ClicableUI
   m_TagString: MainCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
