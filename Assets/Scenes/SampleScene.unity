@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 0.3
+    agentHeight: 0.08
+    agentSlope: 1
+    agentClimb: 0.01
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -201,6 +201,68 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1001 &217004669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 277381045}
+    m_Modifications:
+    - target: {fileID: 3916617272171320546, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_Name
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+--- !u!4 &217004670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3916617272171320548, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
+  m_PrefabInstance: {fileID: 217004669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &277381044
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 217004670}
   - {fileID: 1205094232}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -395,7 +458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 277381045}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1205094233
 MonoBehaviour:
@@ -410,7 +473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameProcessingEcs: {fileID: 8840473207440705767, guid: 39391d385cea5df40aa919ac0bcfd5ae, type: 3}
-  _ground: {fileID: 3916617272171320546, guid: 5845660c7476e354b8c5169eb929c815, type: 3}
   _character: {fileID: 2392433016433400278, guid: 279d5a65492ab5a4eb6280861c8f2a61, type: 3}
 --- !u!1 &1841450107
 GameObject:
@@ -466,7 +528,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 7
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

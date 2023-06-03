@@ -1,8 +1,8 @@
 using Core.Monobehaviour;
 using Leopotam.Ecs;
 using System.Linq;
-using UnityEngine;
 using Settings;
+using Events;
 using Pools;
 using Core;
 
@@ -20,14 +20,27 @@ namespace Systems
             _defaultEnemiesPool = new PoolMonoBehaviour<EnemyMonobehaviour>
                 (
                     defaultEnemyPrefab,
-                    Vector2.zero,
+                    new UnityEngine.Vector2(-21, 21),
                     isAutoExpand: true
                 );
+
+            SendEnemyCreationEvent();
         }
 
         public void Run()
         {
 
+        }
+
+        private void SendEnemyCreationEvent()
+        {
+            _defaultEnemiesPool.PoolObjects.ToList().ForEach(x =>
+            {
+                EventSystem.Send(new EnemyCreationEvent
+                {
+                    EnemyMonobehaviour = x,
+                });
+            });
         }
     }
 }

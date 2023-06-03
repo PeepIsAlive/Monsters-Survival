@@ -7,7 +7,7 @@ namespace Systems
 {
     public sealed class CharacterCreationSystem : IEcsInitSystem, IEcsDestroySystem
     {
-        private readonly EcsFilter<CharacterComponent, PersonComponent> _characterFilter;
+        private EcsFilter<CharacterComponent, PersonComponent> _characterFilter;
         private readonly WorldGenerator _worldGenerator;
 
         public void Init()

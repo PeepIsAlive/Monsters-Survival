@@ -6,12 +6,14 @@ namespace Pools
 {
     public sealed class PoolMonoBehaviour<T> where T : MonoBehaviour
     {
+        public IEnumerable<T> PoolObjects => _pool;
+
         private readonly List<T> _pool;
         private readonly T _prefab;
-        private readonly Vector2 _spawnPoint;
+        private Vector2 _spawnPoint;
 
         private bool _isAutoExpand;
-        private const int DEFAULT_OBJECTS_AMOUNT = 5;
+        private const int DEFAULT_OBJECTS_AMOUNT = 3; // to do: edit this
 
         public PoolMonoBehaviour(T prefab, Vector2 spawnPoint, bool isAutoExpand = false)
         {
@@ -65,6 +67,7 @@ namespace Pools
 
         private T CreateObject()
         {
+            _spawnPoint.x += Random.Range(2, 21); // to do remove this
             return Object.Instantiate(_prefab, _spawnPoint, Quaternion.identity);
         }
     }

@@ -2,7 +2,7 @@ using UI;
 
 namespace Components
 {
-    public struct ShowPopupComponent
+    internal struct ShowPopupComponent
     {
         public PopupToShow PopupToShow;
     }

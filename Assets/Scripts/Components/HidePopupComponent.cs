@@ -1,4 +1,4 @@
 namespace Components
 {
-    public struct HidePopupComponent { }
+    internal struct HidePopupComponent { }
 }

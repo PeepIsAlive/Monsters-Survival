@@ -23,15 +23,27 @@ namespace Systems
         private void CreateEnemy(EnemyCreationEvent e)
         {
             var enemy = _worldGenerator.CreateEnemy(e.EnemyMonobehaviour.Type, out var person);
-
             e.EnemyMonobehaviour.SetEnemy(enemy);
-            _world.NewEntity().Replace(new EnemyComponent
+
+            _world.NewEntity().Replace(new ModelComponent
             {
-                Enemy = enemy
-            }).Replace(new PersonComponent
+                Transform = e.EnemyMonobehaviour.Transform
+            })
+            .Replace(new RotateComponent
+            {
+                Renderer = e.EnemyMonobehaviour.Renderer
+            })
+            .Replace(new DirectionComponent())
+            .Replace(new PersonComponent
             {
                 Person = person
+            })
+            .Replace(new EnemyComponent
+            {
+                Monobehaviour = e.EnemyMonobehaviour
             });
+
+            e.EnemyMonobehaviour.gameObject.SetActive(true); // to do: del this
         }
     }
 }
