@@ -6,7 +6,8 @@ namespace Core
 
         public Enemy(string id) : base(id) { }
 
-        public Enemy(string id, float speed, EnemyType type) : base(id, speed)
+        public Enemy(string id, float speed, EnemyType type, Parameters parameters)
+            : base(id, speed, parameters)
         {
             Type = type;
         }

@@ -15,7 +15,7 @@ namespace Settings
                 (
                     Guid.NewGuid().ToString(),
                     _personPreset.Speed,
-                    new Parameters(_personPreset.ParameterSettings)
+                    new Parameters(_personPreset.ParametersSettings)
                 );
         }
 

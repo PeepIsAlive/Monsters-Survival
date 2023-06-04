@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 97092195-ca73-4513-a35d-18b23b46c049
   <Type>k__BackingField: 0
+  <Damage>k__BackingField: 3
   _personPreset:
-    <Speed>k__BackingField: 5
-    <ParameterSettings>k__BackingField:
+    <Speed>k__BackingField: 4
+    <ParametersSettings>k__BackingField:
     - <Type>k__BackingField: 0
       <Range>k__BackingField:
         <Min>k__BackingField: 0
-        <Max>k__BackingField: 100
+        <Max>k__BackingField: 50
