@@ -41,7 +41,7 @@ namespace Systems
                         var enemyTransform = _enemiesFilter.Get2(i).Transform;
                         var enemyMono = _enemiesFilter.Get1(i).Monobehaviour;
 
-                        if (Vector2.Distance(enemyTransform.position, characterTransform.position) > 2f)
+                        if (Vector2.Distance(enemyTransform.position, characterTransform.position) > 0.5f)
                         {
                             enemyTransform.position =
                                 Vector2.MoveTowards(enemyTransform.position, characterTransform.position, enemyMono.Enemy.Speed * Time.fixedDeltaTime);

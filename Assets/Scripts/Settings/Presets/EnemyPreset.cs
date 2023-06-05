@@ -8,7 +8,7 @@ namespace Settings
     public sealed class EnemyPreset : Preset
     {
         [field: SerializeField] public EnemyType Type { get; private set; }
-        [field: Range(1, 5)] [field: SerializeField] public int Damage { get; private set; }
+        [field: Range(1, 5)] [field: SerializeField] public int DamageAmount { get; private set; }
 
         [Header("Person preset")]
         [SerializeField] private PersonPreset _personPreset;
@@ -20,6 +20,7 @@ namespace Settings
                 (
                     _id,
                     _personPreset.Speed,
+                    DamageAmount,
                     Type,
                     new Parameters(_personPreset.ParametersSettings)
                 );
@@ -29,7 +30,7 @@ namespace Settings
         {
             _personPreset ??= new PersonPreset();
 
-            Damage = UnityEngine.Random.Range(1, 5);
+            DamageAmount = UnityEngine.Random.Range(1, 5);
             _personPreset.GenerateParameters();
         }
     }
