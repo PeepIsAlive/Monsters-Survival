@@ -23,12 +23,12 @@ namespace MonstersSurvival
             if (_parent == null)
                 return;
 
+            Instantiate(_character, Vector3.up, Quaternion.identity);
             Instantiate(_gameProcessingEcs, _parent).OnSystemsInit += () =>
             {
                 EventSystem.Send<CharacterCreationEvent>();
             };
 
-            Instantiate(_character, Vector3.up, Quaternion.identity);
             DestroyStarter();
         }
 
