@@ -1,4 +1,4 @@
-using UnityEngine;
+using Cinemachine;
 using System;
 
 namespace Components
@@ -6,6 +6,6 @@ namespace Components
     [Serializable]
     public struct CameraComponent
     {
-        public Camera Camera;
+        public CinemachineVirtualCamera Camera;
     }
 }

@@ -10,7 +10,13 @@ namespace Systems
 
         public void Init()
         {
-
+            foreach (var i in _cameraFilter)
+            {
+                foreach (var j in _characterFilter)
+                {
+                    _cameraFilter.Get1(i).Camera.Follow = _characterFilter.Get2(j).Transform;
+                }
+            }
         }
 
         public void Run()
