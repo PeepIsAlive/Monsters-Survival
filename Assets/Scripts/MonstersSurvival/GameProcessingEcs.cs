@@ -85,7 +85,8 @@ namespace MonstersSurvival
         {
             _fixedSystems
                 .Add(new MovementSystem())
-                .Add(new EnemyMovementSystem());
+                .Add(new EnemyMovementSystem())
+                .Add(new CameraSystem());
         }
     }
 }
