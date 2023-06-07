@@ -23,6 +23,7 @@ namespace Systems
         private void CreateEnemy(EnemyCreationEvent e)
         {
             var enemy = _worldGenerator.CreateEnemy(e.EnemyMonobehaviour.Type, out var person);
+            e.EnemyMonobehaviour.SetEnemy(enemy);
 
             _world.NewEntity().Replace(new ModelComponent
             {
@@ -40,7 +41,6 @@ namespace Systems
             .Replace(new EnemyComponent
             {
                 Enemy = enemy,
-                Monobehaviour = e.EnemyMonobehaviour
             });
 
             e.EnemyMonobehaviour.gameObject.SetActive(true); // to do: del this

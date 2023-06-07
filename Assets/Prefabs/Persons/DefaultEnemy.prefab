@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 704305908}
   - component: {fileID: 704305909}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,9 +203,6 @@ MonoBehaviour:
   <Transform>k__BackingField: {fileID: 3462914290855690113}
   <Renderer>k__BackingField: {fileID: 3462914291613090153}
   <Type>k__BackingField: 0
-  _damagableLayers:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &3462914291613090159
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +276,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -140220566, guid: 1bc6097228993f045852159e71f81d5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -15,9 +15,11 @@ namespace Systems
             {
                 var direction = _characterFilter.Get2(i).Direction;
 
+                if (direction == Vector2.zero)
+                    continue;
+
                 var rigidbody = _characterFilter.Get1(i).Rigidbody;
                 var speed = _characterFilter.Get3(i).Person.Speed;
-                //_characterFilter.Get4(i).Transform.Translate
 
                 rigidbody.position += direction * speed * Time.fixedDeltaTime;
             }

@@ -1,4 +1,3 @@
-using Core.Monobehaviour;
 using System;
 using Core;
 
@@ -8,6 +7,5 @@ namespace Components
     public struct EnemyComponent
     {
         public Enemy Enemy;
-        public EnemyMonoBehaviour Monobehaviour;
     }
 }

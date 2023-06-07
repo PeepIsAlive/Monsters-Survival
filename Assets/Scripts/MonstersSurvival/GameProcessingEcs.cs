@@ -69,6 +69,7 @@ namespace MonstersSurvival
                 .Add(new CharacterInputSystem())
                 .Add(new EnemyCreationSystem())
                 .Add(new PoolEnemiesSystem())
+                .Add(new CharacterAnimationSystem())
                 .Add(new HealthSystem())
                 .Add(new RotateSystem())
                 .Add(new PopupDisplaySystem())
