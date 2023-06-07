@@ -10,14 +10,14 @@ namespace Systems
 {
     public sealed class PoolEnemiesSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private PoolMonoBehaviour<EnemyMonobehaviour> _defaultEnemiesPool;
+        private PoolMonoBehaviour<EnemyMonoBehaviour> _defaultEnemiesPool;
 
         public void Init()
         {
             var prefabSet = SettingsProvider.Load<PrefabSet>();
             var defaultEnemyPrefab = prefabSet.EnemiesPrefabs.First(x => x.Type == EnemyType.Default);
 
-            _defaultEnemiesPool = new PoolMonoBehaviour<EnemyMonobehaviour>
+            _defaultEnemiesPool = new PoolMonoBehaviour<EnemyMonoBehaviour>
                 (
                     defaultEnemyPrefab,
                     new UnityEngine.Vector2(-21, 21),

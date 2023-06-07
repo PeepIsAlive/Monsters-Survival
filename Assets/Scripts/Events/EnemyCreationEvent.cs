@@ -4,6 +4,6 @@ namespace Events
 {
     public struct EnemyCreationEvent
     {
-        public EnemyMonobehaviour EnemyMonobehaviour;
+        public EnemyMonoBehaviour EnemyMonobehaviour;
     }
 }

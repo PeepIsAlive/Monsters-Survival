@@ -93,12 +93,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3462914290855690113}
-  - component: {fileID: 1532584138}
   - component: {fileID: 155684816661254361}
   - component: {fileID: 6507887563534852290}
   - component: {fileID: 1464148081}
-  - component: {fileID: 4172011573149777048}
-  - component: {fileID: 8289224815050324937}
+  - component: {fileID: 1532584138}
   m_Layer: 6
   m_Name: DefaultEnemy
   m_TagString: Untagged
@@ -123,24 +121,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1532584138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3462914290855690112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f8cdda20352f14fbbbfdb6203d1d2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Transform>k__BackingField: {fileID: 3462914290855690113}
-  <Renderer>k__BackingField: {fileID: 3462914291613090153}
-  <Type>k__BackingField: 0
-  _damagableLayers:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!50 &155684816661254361
 Rigidbody2D:
   serializedVersion: 4
@@ -208,7 +188,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &4172011573149777048
+--- !u!114 &1532584138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,24 +197,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3462914290855690112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f8cdda20352f14fbbbfdb6203d1d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  convertMode: 0
---- !u!114 &8289224815050324937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3462914290855690112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a10bfbb419f7443929b642b4746f1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    Animator: {fileID: 1464148081}
+  <Transform>k__BackingField: {fileID: 3462914290855690113}
+  <Renderer>k__BackingField: {fileID: 3462914291613090153}
+  <Type>k__BackingField: 0
+  _damagableLayers:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &3462914291613090159
 GameObject:
   m_ObjectHideFlags: 0

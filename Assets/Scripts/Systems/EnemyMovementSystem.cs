@@ -39,12 +39,12 @@ namespace Systems
                     foreach (var i in _enemiesFilter)
                     {
                         var enemyTransform = _enemiesFilter.Get2(i).Transform;
-                        var enemyMono = _enemiesFilter.Get1(i).Monobehaviour;
+                        var enemy = _enemiesFilter.Get1(i).Enemy;
 
                         if (Vector2.Distance(enemyTransform.position, characterTransform.position) > 1f)
                         {
                             enemyTransform.position =
-                                Vector2.MoveTowards(enemyTransform.position, characterTransform.position, enemyMono.Enemy.Speed * Time.fixedDeltaTime);
+                                Vector2.MoveTowards(enemyTransform.position, characterTransform.position, enemy.Speed * Time.fixedDeltaTime);
                         }
                     }
                 }
