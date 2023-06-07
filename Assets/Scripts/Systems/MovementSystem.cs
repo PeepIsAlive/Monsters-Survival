@@ -15,13 +15,11 @@ namespace Systems
             {
                 var direction = _characterFilter.Get2(i).Direction;
 
-                if (direction == Vector2.zero)
-                    continue;
-
-                var controller = _characterFilter.Get1(i).Controller;
+                var rigidbody = _characterFilter.Get1(i).Rigidbody;
                 var speed = _characterFilter.Get3(i).Person.Speed;
+                //_characterFilter.Get4(i).Transform.Translate
 
-                controller.Move(direction * speed * Time.fixedDeltaTime);
+                rigidbody.position += direction * speed * Time.fixedDeltaTime;
             }
         }
     }

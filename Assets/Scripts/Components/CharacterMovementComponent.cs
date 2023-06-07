@@ -6,6 +6,6 @@ namespace Components
     [Serializable]
     public struct CharacterMovementComponent
     {
-        public CharacterController Controller;
+        public Rigidbody2D Rigidbody;
     }
 }
