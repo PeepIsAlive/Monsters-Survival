@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
 using UnityEngine;
+using Settings;
 
 namespace Localization
 {
     public static class LocalizationProvider
     {
         private static Dictionary<string, LocalizationFileData> _localizationFiles;
+        private static LocalizedText _defaultLocalizedText;
 
         static LocalizationProvider()
         {
             _localizationFiles = new Dictionary<string, LocalizationFileData>();
+            _defaultLocalizedText = SettingsProvider.Get<LocalizationProviderSettings>().DefaultLocalizedText;
         }
 
         public static async Task Initialze(Locale locale)
@@ -26,6 +29,17 @@ namespace Localization
         public static string GetText(LocalizedText asset, string key)
         {
             var fileDataKey = GetFileDataKey(asset.TableReference.TableCollectionName, asset.TableEntryReference.KeyId);
+            var text = string.Empty;
+
+            if (_localizationFiles.TryGetValue(fileDataKey, out var fileData))
+                fileData.TryGetValue(key, out text);
+
+            return text;
+        }
+
+        public static string GetText(string key)
+        {
+            var fileDataKey = GetFileDataKey(_defaultLocalizedText.TableReference.TableCollectionName, _defaultLocalizedText.TableEntryReference.KeyId);
             var text = string.Empty;
 
             if (_localizationFiles.TryGetValue(fileDataKey, out var fileData))
