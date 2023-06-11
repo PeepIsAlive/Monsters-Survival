@@ -14,7 +14,7 @@ namespace Systems
 
         public void Init()
         {
-            var prefabSet = SettingsProvider.Load<PrefabSet>();
+            var prefabSet = SettingsProvider.Get<PrefabSet>();
             var defaultEnemyPrefab = prefabSet.EnemiesPrefabs.First(x => x.Type == EnemyType.Default);
 
             _defaultEnemiesPool = new PoolMonoBehaviour<EnemyMonoBehaviour>

@@ -10,7 +10,7 @@ namespace Modules
 
         public Character CreateCharacter(out Person person)
         {
-            _characterCreationSettings ??= SettingsProvider.Load<CharacterCreationSettings>();
+            _characterCreationSettings ??= SettingsProvider.Get<CharacterCreationSettings>();
             var character = _characterCreationSettings.GetCharacter();
 
             person = character;
@@ -20,7 +20,7 @@ namespace Modules
 
         public Enemy CreateEnemy(EnemyType type, out Person person)
         {
-            _enemyCreationSettings ??= SettingsProvider.Load<EnemyCreationSettings>();
+            _enemyCreationSettings ??= SettingsProvider.Get<EnemyCreationSettings>();
             var enemy = _enemyCreationSettings.GetEnemy(type);
 
             person = enemy;

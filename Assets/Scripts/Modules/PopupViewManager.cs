@@ -13,7 +13,7 @@ namespace UI
 
         public void Show<T>(T settings) where T : Popup
         {
-            _prefabSet ??= SettingsProvider.Load<PrefabSet>();
+            _prefabSet ??= SettingsProvider.Get<PrefabSet>();
             _popupParent ??= GameObject.FindGameObjectWithTag("PopupParent").transform;
 
             var popupPrefab = _prefabSet.Popups.First(x => x.GetComponent<PopupView<T>>() != null)

@@ -47,7 +47,7 @@ namespace UI
 
         protected void InitializeButtons(List<ButtonSettings> buttonSettings)
         {
-            var prefabSet = SettingsProvider.Load<PrefabSet>();
+            var prefabSet = SettingsProvider.Get<PrefabSet>();
 
             foreach (var setting in buttonSettings)
             {

@@ -14,7 +14,7 @@ namespace Settings
             _settings = new Dictionary<Type, ScriptableObject>();
         }
 
-        public static T Load<T>() where T : ScriptableObject
+        public static T Get<T>() where T : ScriptableObject
         {
             var type = typeof(T);
 
